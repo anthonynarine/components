@@ -7,7 +7,7 @@ const finalClassName = className("px-1.5", {
     "text-yello-500": false
 });
 
-console.log(finalClassName);
+// console.log(finalClassName);
 
 function Button ({ 
     children,
