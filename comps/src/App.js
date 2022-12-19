@@ -1,30 +1,31 @@
-import Button from "./Components/Button";
-import { HiBellAlert, HiCloudArrowDown, HiCircleStack  } from "react-icons/hi2";
-import Accordion from "./Components/Accordion";
+import Dropdown from "./Components/Dropdwon";
+import { useState, useSyncExternalStore } from "react";
 
 function App () {
-    const items = [
-    {
-        id: "l3adsk6j",    
-        label: "Carotid Ultrasound",
-        content: "IDC 10 Codes 93925, Exam time 45:00 minutes",
-    },
-    {
-        id: "ajflasj200",    
-        label: "Renal Ultrasound",
-        content: "IDC 10 Codes 93878, Exam time 60:00 minutes",
-    },
-    {
-        id: "ad30klk", 
-        label: "Venous Ultrasound",
-        content: "IDC 10 Codes 93970, Exam time 45:00 minutes",
-    },
 
+    const [selection, setSelection] = useState(null)
+
+    const handleSelect = (option) => {
+        setSelection(option);
+    };
+
+    const options = [
+        { label: "Honda", value: "Civic si" },
+        { label: "BMW", value: "335i" },
+        { label: "Audi", value: "S5" },
+        { label: "Audi", value: "RS5" },
     ];
 
+
     return (
-    <Accordion items={items}/>
-   )
+        < Dropdown
+            options={options}
+            value={selection}
+            onChange={handleSelect}
+        />
+    );
+
 };
+ 
 
 export default App;
