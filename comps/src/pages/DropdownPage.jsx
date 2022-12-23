@@ -1,5 +1,5 @@
-import Dropdown from "../Components/Dropdwon";
-import { useState, useSyncExternalStore } from "react";
+import Dropdown from "../components/Dropdown";
+import { useState} from "react";
 
 function DropdownPage () {
 
@@ -20,8 +20,7 @@ function DropdownPage () {
     return (
         <div className="flex">
             < Dropdown options={options} value={selection} onChange={handleSelect}/>
-            {/* < Dropdown options={options} value={selection} onChange={handleSelect}/> */}
-        </div>
+         </div>
     );
 
 };
