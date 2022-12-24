@@ -1,10 +1,10 @@
-import Table from "../components/Table";
-
+// import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
 
 function TablePage() {
     
     const carData = [
-        { make: "Honda", model: "Civic Dx", color: "bg-red-700", hp: 106 },
+        { make: "Honda", model: "Civic Dx", color: "bg-red-800", hp: 106 },
         { make: "Honda", model: "Civic si", color: "bg-black", hp: 160 },
         { make: "Acura", model: "RSX typeS", color: "bg-gray-300", hp: 201 },
         { make: "BMW",   model: "335i", color: "bg-gray-200", hp: 302 },
@@ -16,7 +16,8 @@ function TablePage() {
     const config = [
         {
             label: "Make",
-            render: (car) => car.make
+            render: (car) => car.make,
+            sortValue: (car) => car.make
         },  
         {
             label: "Model",
@@ -28,7 +29,8 @@ function TablePage() {
         },
         {
             label: "hp",
-            render: (car) => car.hp
+            render: (car) => car.hp,
+            sortValue: (car) => car.hp
         },
         // {
         //     label: "User Rating",
@@ -39,7 +41,8 @@ function TablePage() {
 
     return(
         <div>
-            <Table data={carData} config={config}/>
+            {/* <Table data={carData} config={config}/> */}
+            <SortableTable data={carData} config={config}/>
         </div>
     ) 
 };
